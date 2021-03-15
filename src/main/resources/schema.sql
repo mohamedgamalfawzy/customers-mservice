@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS `country`;
+CREATE TABLE country(
+    id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL UNIQUE,
+    code VARCHAR(5) NOT NULL UNIQUE,
+    regex VARCHAR(50) NOT NULL
+    );
+ALTER TABLE customer ADD COLUMN phone_state INTEGER;
+ALTER TABLE customer ADD COLUMN country_id INT REFERENCES country(id);
